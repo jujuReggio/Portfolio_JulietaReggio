@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             navContact: "Contact",
             heroTitle: "JULIETA REGGIO",
             heroSubtitle: "Game Developer & Technical Artist",
-            heroDesc: "Studying towards bridging art, programming, and design with expertise in 2D/3D art, technical workflows, and gameplay systems in Unreal Engine and Unity.",
+            heroDesc: "Game development student working at the intersection of art, programming, and design, with experience in 2D/3D art, technical workflows, and gameplay systems in Unreal Engine and Unity.",
             viewProjects: "View Projects",
             contactBtn: "Contact",
             downloadCV: "Download CV",
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
             contactSend: "Send Message",
             footerAuthor: "Author: Julieta Reggio",
             footerRights: "&copy; 2026 Game Developer & Technical Artist. All rights reserved.",
-            modalPurpose: "Purpose",
+            modalPurpose: "Short Description",
             modalAddition: "My Addition",
             modalTools: "Tools Used"
         },
@@ -60,14 +60,14 @@ document.addEventListener('DOMContentLoaded', () => {
             navGallery: "Galería",
             navContact: "Contacto",
             heroTitle: "JULIETA REGGIO",
-            heroSubtitle: "Desarrolladora de Juegos & Artista Técnica",
-            heroDesc: "Estudiando para unir el arte, la programación y el diseño con experiencia en arte 2D/3D, flujos de trabajo técnicos y sistemas de juego en Unreal Engine y Unity.",
+            heroSubtitle: "Desarrolladora de Videojuegos & Artista Técnica",
+            heroDesc: "Estudiante de desarrollo de videojuegos trabajando en la intersección del arte, la programación y el diseño, con experiencia en arte 2D/3D, flujos de trabajo técnicos y sistemas de videojuegos en Unreal Engine y Unity.",
             viewProjects: "Ver Proyectos",
             contactBtn: "Contacto",
             downloadCV: "Descargar CV",
             aboutTitle: "Sobre Mí",
             aboutP1: "Soy <strong>Técnica en Desarrollo de Videojuegos</strong> en mi último año de estudios para obtener mi licenciatura en <strong>UADE</strong> (Universidad de la Empresa Argentina).",
-            aboutP2: "Me especializo en arte 2D, con experiencia en modelado 3D, texturizado y flujos de trabajo de arte técnico. Con dominio de Unreal Engine y Unity, desarrollo sistemas de juego utilizando tanto Blueprints como código (C++ y C#).",
+            aboutP2: "Me especializo en arte 2D, con experiencia en modelado 3D, texturizado y flujos de trabajo de arte técnico. Con dominio de Unreal Engine y Unity, desarrollo sistemas de videojuegos utilizando tanto Blueprints como código (C++ y C#).",
             aboutP3: "Mi formación multidisciplinaria me brinda una perspectiva única, permitiéndome cerrar la brecha entre los equipos de arte, programación y diseño. Tengo una fuerte inclinación hacia la gestión de productos y la coordinación interdisciplinaria.",
             academicTitle: "Formación Académica",
             academicUade: "2023 - Presente (Actualmente en 4º año)",
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
             skill3d: "Producción 3D",
             skillCode: "Código y Motores",
             skillWeb: "Desarrollo Web",
-            projectsTitle: "Proyectos de Desarrollo de Juegos",
+            projectsTitle: "Proyectos de Desarrollo de Videojuegos",
             artTitle: "Portafolio de Arte",
             contactTitle: "Ponte en Contacto",
             contactSub: "Trabajemos Juntos",
@@ -94,25 +94,44 @@ document.addEventListener('DOMContentLoaded', () => {
             contactMsg: "Mensaje",
             contactSend: "Enviar Mensaje",
             footerAuthor: "Autor: Julieta Reggio",
-            footerRights: "&copy; 2026 Desarrolladora de Juegos & Artista Técnica. Todos los derechos reservados.",
-            modalPurpose: "Objetivo",
+            footerRights: "&copy; 2026 Desarrolladora de Videojuegos & Artista Técnica. Todos los derechos reservados.",
+            modalPurpose: "Breve Descripción",
             modalAddition: "Mi Contribución",
-            modalTools: "Herramientas"
+            modalTools: "Herramientas",
+            catCharacter: "Diseño de Personajes",
+            catCommissions: "Comisiones",
+            catAnimation: "Sprites de Animación",
+            catProps: "Props / Assets",
+            catCovers: "Portadas / Covers",
+            catModels: "Modelos",
+            catOptimization: "Optimización",
+            catShaders: "Shaders"
         }
+    };
+
+    const enGalleryCats = {
+        character: "Character Design",
+        comissions: "Comissions",
+        animation: "Animation Sprites",
+        props: "Prop / Assets",
+        covers: "SplashScreens / Covers",
+        models: "Models",
+        optimization: "Optimization",
+        shaders: "Shaders"
     };
 
     let currentLang = 'en';
 
     const updateLanguage = () => {
         const t = translations[currentLang];
-        
+
         // Navigation
         document.querySelector('a[href="#about"]').textContent = t.navAbout;
         document.querySelectorAll('a[href="#skills"]').forEach(el => el.textContent = t.navSkills);
         document.querySelectorAll('a[href="#projects"]').forEach(el => el.textContent = t.navProjects);
         document.querySelectorAll('a[href="#gallery"]').forEach(el => el.textContent = t.navGallery);
         document.querySelectorAll('a[href="#contact"]').forEach(el => el.textContent = t.navContact);
-        
+
         // Toggle Text
         langToggle.innerHTML = `<img src="img/icons/language_light.png" alt="Language" class="nav-icon"> ${currentLang.toUpperCase()}`;
 
@@ -130,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
         aboutParagraphs[0].innerHTML = t.aboutP1;
         aboutParagraphs[1].innerHTML = t.aboutP2;
         aboutParagraphs[2].innerHTML = t.aboutP3;
-        
+
         const aboutHeadings = document.querySelectorAll('.detail-group h3');
         aboutHeadings[0].textContent = t.academicTitle;
         aboutHeadings[1].textContent = t.languagesTitle;
@@ -163,11 +182,25 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('#projects h2').textContent = t.projectsTitle;
         document.querySelector('#gallery h2').textContent = t.artTitle;
 
+        // Gallery Categories (Overlay text)
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            const cat = item.getAttribute('data-category');
+            const span = item.querySelector('.gallery-overlay span');
+            if (cat === 'character') span.textContent = currentLang === 'en' ? enGalleryCats.character : t.catCharacter;
+            if (cat === 'comissions') span.textContent = currentLang === 'en' ? enGalleryCats.comissions : t.catCommissions;
+            if (cat === 'animation') span.textContent = currentLang === 'en' ? enGalleryCats.animation : t.catAnimation;
+            if (cat === 'props') span.textContent = currentLang === 'en' ? enGalleryCats.props : t.catProps;
+            if (cat === 'covers') span.textContent = currentLang === 'en' ? enGalleryCats.covers : t.catCovers;
+            if (cat === 'models') span.textContent = currentLang === 'en' ? enGalleryCats.models : t.catModels;
+            if (cat === 'optimization') span.textContent = currentLang === 'en' ? enGalleryCats.optimization : t.catOptimization;
+            if (cat === 'shaders') span.textContent = currentLang === 'en' ? enGalleryCats.shaders : t.catShaders;
+        });
+
         // Contact
         document.querySelector('#contact h2').textContent = t.contactTitle;
         document.querySelector('.contact-info h3').textContent = t.contactSub;
         document.querySelector('.contact-info p').textContent = t.contactDesc;
-        
+
         const formGroups = document.querySelectorAll('.form-group');
         formGroups[0].querySelector('label').textContent = t.contactName;
         formGroups[0].querySelector('input').placeholder = t.contactName;
