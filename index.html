@@ -170,7 +170,7 @@
         <section id="projects">
             <h2>Game Development Projects</h2>
             <div class="projects-grid">
-                <div class="project-card" data-title="KATANA NO NEKO" data-img="img/prototypes/knk.png"
+                <div class="project-card" data-id="knk" data-title="KATANA NO NEKO" data-img="img/prototypes/knk.png"
                     data-purpose="Resource management and restoration with a combat component and three different biomes to explore. Gather resources, face enemies, and defeat bosses that block progress."
                     data-addition="I was responsible for the entire art pipeline, from concept art and visual design to producing all in-game assets and sprite animations. I also created visual effects using Unity’s particle system and contributed to programming features such as the restoration and inventory systems."
                     data-tools="Unity, C#, Photoshop, Medibang Paint Pro, Particle Systems">
@@ -187,10 +187,11 @@
                         </a>
                     </div>
                 </div>
-                <div class="project-card" data-title="GOBLIN LAIR PROTOTYPE" data-img="img/prototypes/goblinLair.png"
+                <div class="project-card" data-id="goblin" data-title="GOBLIN LAIR PROTOTYPE"
+                    data-img="img/prototypes/goblinLair.png"
                     data-purpose="Create a fast-paced FPS dungeon crawler with a focus on smart AI behavior and replayability through procedural generation."
                     data-addition="I developed the custom combat systems and the AI logic for variety of enemy types. I also designed the modular environment kits used for the procedural level generation."
-                    data-tools="Unreal Engine 5, Blueprints, C++, ZBrush, Maya">
+                    data-tools="Unreal Engine 5, Blueprints, Blender, Niagara System, Custom Shaders">
                     <div class="project-img">
                         <img src="img/prototypes/goblinLair.png" alt="Goblin Lair Prototype">
                     </div>
@@ -215,27 +216,32 @@
                 <h3 class="category-title">2D</h3>
                 <div class="gallery-scroll">
                     <div class="gallery-item" data-category="character"
-                        data-images='["img/art/2d/CharacterDesign/concept.png", "img/art/2d/CharacterDesign/concept0.png", "img/art/2d/CharacterDesign/conceptCats.jpeg", "img/art/2d/CharacterDesign/oc jewler.png", "img/art/2d/CharacterDesign/turnaround.png", "img/art/2d/CharacterDesign/turnaround0.png"]'>
-                        <img src="img/art/2d/CharacterDesign/concept.png" alt="Character Design">
+                        data-images='["img/art/2d/CharacterDesign/ValkyrieConcept.png", "img/art/2d/CharacterDesign/conceptCats.jpeg", "img/art/2d/CharacterDesign/oc jewler.png", "img/art/2d/CharacterDesign/turnaround.png", "img/art/2d/CharacterDesign/turnaround0.png"]'
+                        data-captions='["Valkyrie Concept Art", "Cat Character Concepts", "Original Character: The Jeweler", "Character Turnaround (Front/Back)", "Supplementary Character Views"]'>
+                        <img src="img/art/2d/CharacterDesign/ValkyrieConcept.png" alt="Character Design">
                         <div class="gallery-overlay"><span>Character Design</span></div>
                     </div>
                     <div class="gallery-item" data-category="comissions"
-                        data-images='["img/art/2d/Comissions/girl.png", "img/art/2d/Comissions/choso.png", "img/art/2d/Comissions/kain.png", "img/art/2d/Comissions/rafa.png", "img/art/2d/Comissions/robin.jpeg"]'>
+                        data-images='["img/art/2d/Comissions/girl.png", "img/art/2d/Comissions/choso.png", "img/art/2d/Comissions/kain.png", "img/art/2d/Comissions/rafa.png", "img/art/2d/Comissions/robin.jpeg"]'
+                        data-captions='["Character Portrait Commission", "Fan Art Commission: Choso", "RPG Character Commission", "Stylized Portrait Commission", "Character Design Commission: Robin"]'>
                         <img src="img/art/2d/Comissions/girl.png" alt="Comissions">
                         <div class="gallery-overlay"><span>Comissions</span></div>
                     </div>
                     <div class="gallery-item" data-category="animation"
-                        data-images='["img/art/2d/AnimationSprite/1.png", "img/art/2d/AnimationSprite/2.png", "img/art/2d/AnimationSprite/3.png", "img/art/2d/AnimationSprite/4.png", "img/art/2d/AnimationSprite/5.png", "img/art/2d/AnimationSprite/6.png"]'>
+                        data-images='["img/art/2d/AnimationSprite/1.png", "img/art/2d/AnimationSprite/2.png", "img/art/2d/AnimationSprite/3.png", "img/art/2d/AnimationSprite/4.png", "img/art/2d/AnimationSprite/5.png", "img/art/2d/AnimationSprite/6.png"]'
+                        data-captions='["Animation Frame 1", "Animation Frame 2", "Animation Frame 3", "Animation Frame 4", "Animation Frame 5", "Animation Frame 6"]'>
                         <img src="img/art/2d/AnimationSprite/1.png" alt="Animation Sprites">
                         <div class="gallery-overlay"><span>Animation Sprites</span></div>
                     </div>
                     <div class="gallery-item" data-category="props"
-                        data-images='["img/art/2d/PropAssets/villageAssets.png", "img/art/2d/PropAssets/biomsAssets.png"]'>
+                        data-images='["img/art/2d/PropAssets/villageAssets.png", "img/art/2d/PropAssets/biomsAssets.png"]'
+                        data-captions='["Village Environment Kit", "Biome Asset Pack"]'>
                         <img src="img/art/2d/PropAssets/villageAssets.png" alt="Prop / Assets">
                         <div class="gallery-overlay"><span>Prop / Assets</span></div>
                     </div>
                     <div class="gallery-item" data-category="covers"
-                        data-images='["img/art/2d/Covers/astro.png", "img/art/2d/Covers/environment.jpeg", "img/art/2d/Covers/knk.png"]'>
+                        data-images='["img/art/2d/Covers/astro.png", "img/art/2d/Covers/environment.jpeg", "img/art/2d/Covers/knk.png"]'
+                        data-captions='["Astro Splash Screen", "Environment Art", "Project Cover Art"]'>
                         <img src="img/art/2d/Covers/astro.png" alt="SplashScreens / Covers">
                         <div class="gallery-overlay"><span>SplashScreens / Covers</span></div>
                     </div>
@@ -246,17 +252,20 @@
                 <h3 class="category-title">3D</h3>
                 <div class="gallery-scroll">
                     <div class="gallery-item" data-category="models"
-                        data-images='["img/art/3d/Models/Character0.png", "img/art/3d/Models/Character1.png", "img/art/3d/Models/Character2.png", "img/art/3d/Models/Character4.png", "img/art/3d/Models/Character5.png", "img/art/3d/Models/Helicopter0.png", "img/art/3d/Models/HelicopterViews.png", "img/art/3d/Models/heliVideo.mp4", "img/art/3d/Models/Jaw0.png", "img/art/3d/Models/Jaw1.png"]'>
+                        data-images='["img/art/3d/Models/Character0.png", "img/art/3d/Models/Character1.png", "img/art/3d/Models/Character2.png", "img/art/3d/Models/Character4.png", "img/art/3d/Models/Character5.png", "img/art/3d/Models/Helicopter0.png", "img/art/3d/Models/HelicopterViews.png", "img/art/3d/Models/heliVideo.mp4", "img/art/3d/Models/Jaw0.png", "img/art/3d/Models/Jaw1.png"]'
+                        data-captions='["3D Character Sculpt", "Character High Poly", "Character Retopology", "Textured Character Model", "Posed Character", "Low Poly Helicopter Model", "Helicopter Model Views", "Helicopter Turnaround", "Anatomical Asset Study (Front)", "Anatomical Asset Study (Side)"]'>
                         <img src="img/art/3d/Models/Character0.png" alt="Models">
                         <div class="gallery-overlay"><span>Models</span></div>
                     </div>
                     <div class="gallery-item" data-category="optimization"
-                        data-images='["img/art/3d/Optimization/Retopo0.png", "img/art/3d/Optimization/Retopo1.png", "img/art/3d/Optimization/Retopo2.png"]'>
+                        data-images='["img/art/3d/Optimization/Retopo0.png", "img/art/3d/Optimization/Retopo1.png", "img/art/3d/Optimization/Retopo2.png"]'
+                        data-captions='["Low Poly Topology", "Edge Flow Analysis", "Final Game-Ready Mesh"]'>
                         <img src="img/art/3d/Optimization/Retopo0.png" alt="Optimization">
                         <div class="gallery-overlay"><span>Optimization</span></div>
                     </div>
                     <div class="gallery-item" data-category="shaders"
-                        data-images='["img/art/3d/Shaders/WaterfallScene.mp4", "img/art/3d/Shaders/BoatScene.mp4"]'>
+                        data-images='["img/art/3d/Shaders/WaterfallScene.mp4", "img/art/3d/Shaders/BoatScene.mp4"]'
+                        data-captions='["Dynamic Waterfall Shader", "Stylized Water Interaction"]'>
                         <img src="img/art/3d/Shaders/coverShaders.png" alt="Shaders">
                         <div class="gallery-overlay"><span>Shaders</span></div>
                     </div>

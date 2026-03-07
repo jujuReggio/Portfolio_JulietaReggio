@@ -51,7 +51,22 @@ document.addEventListener('DOMContentLoaded', () => {
             footerRights: "&copy; 2026 Game Developer & Technical Artist. All rights reserved.",
             modalPurpose: "Short Description",
             modalAddition: "My Addition",
-            modalTools: "Tools Used"
+            modalTools: "Tools Used",
+            projects: {
+                knk: {
+                    purpose: "Resource management and restoration with a combat component and three different biomes to explore. Gather resources, face enemies, and defeat bosses that block progress.",
+                    desc: "Resource management and restoration with a combat component and three different biomes to explore. Gather resources, face enemies, and defeat bosses that block progress.",
+                    addition: "I was responsible for the entire art pipeline, from concept art and visual design to producing all in-game assets and sprite animations. I also created visual effects using Unity’s particle system and contributed to programming features such as the restoration and inventory systems.",
+                    tools: "Unity, C#, Photoshop, Medibang Paint Pro, Particle Systems"
+                },
+                goblin: {
+                    purpose: "Create a fast-paced FPS dungeon crawler with a focus on smart AI behavior and replayability through procedural generation.",
+                    desc: "Medieval fantasy first-person shooter developed in Unreal Engine 5 with custom combat systems, AI behavior, and procedural level generation.",
+                    addition: "I developed the custom combat systems and the AI logic for variety of enemy types. I also designed the modular environment kits used for the procedural level generation.",
+                    tools: "Unreal Engine 5, Blueprints, Blender, Niagara System, Custom Shaders"
+                },
+                btnView: "View Project"
+            }
         },
         es: {
             navAbout: "Sobre mí",
@@ -98,6 +113,21 @@ document.addEventListener('DOMContentLoaded', () => {
             modalPurpose: "Breve Descripción",
             modalAddition: "Mi Contribución",
             modalTools: "Herramientas",
+            projects: {
+                knk: {
+                    purpose: "Gestión de recursos y restauración con un componente de combate y tres biomas diferentes para explorar. Reúne recursos, enfrenta enemigos y derrota jefes que bloquean el progreso.",
+                    desc: "Gestión de recursos y restauración con un componente de combate y tres biomas diferentes para explorar. Reúne recursos, enfrenta enemigos y derrota jefes que bloquean el progreso.",
+                    addition: "Fui responsable de todo el flujo de trabajo artístico, desde el arte conceptual y el diseño visual hasta la producción de todos los assets del juego y las animaciones de sprites. También creé efectos visuales utilizando el sistema de partículas de Unity y contribuí a la programación de características como los sistemas de restauración e inventario.",
+                    tools: "Unity, C#, Photoshop, Medibang Paint Pro, Particle Systems"
+                },
+                goblin: {
+                    purpose: "Crear un dungeon crawler FPS de ritmo rápido centrado en un comportamiento de IA inteligente y rejugabilidad a través de la generación procedimental.",
+                    desc: "Shooter en primera persona de fantasía medieval desarrollado en Unreal Engine 5 con sistemas de combate personalizados, comportamiento de IA y generación de niveles procedimental.",
+                    addition: "Desarrollé los sistemas de combate personalizados y la lógica de IA para una variedad de tipos de enemigos. También diseñé los kits de entorno modulares utilizados para la generación de niveles procedimental.",
+                    tools: "Unreal Engine 5, Blueprints, Blender, Niagara System, Custom Shaders"
+                },
+                btnView: "Ver Proyecto"
+            },
             catCharacter: "Diseño de Personajes",
             catCommissions: "Comisiones",
             catAnimation: "Sprites de Animación",
@@ -181,6 +211,23 @@ document.addEventListener('DOMContentLoaded', () => {
         // Projects & Gallery
         document.querySelector('#projects h2').textContent = t.projectsTitle;
         document.querySelector('#gallery h2').textContent = t.artTitle;
+
+        // Update Project Cards content
+        document.querySelectorAll('.project-card').forEach(card => {
+            const id = card.getAttribute('data-id');
+            if (t.projects[id]) {
+                const data = t.projects[id];
+                card.setAttribute('data-purpose', data.purpose);
+                card.setAttribute('data-addition', data.addition);
+                card.setAttribute('data-tools', data.tools);
+                card.querySelector('.project-info p').textContent = data.desc;
+
+                const btn = card.querySelector('.btn-project');
+                if (btn && id === 'goblin') { // Only translate generic buttons, itch.io stays as brand
+                    btn.innerHTML = `<img src="img/icons/show_light.png" alt="Show" class="btn-icon"> ${t.projects.btnView}`;
+                }
+            }
+        });
 
         // Gallery Categories (Overlay text)
         document.querySelectorAll('.gallery-item').forEach(item => {
@@ -304,13 +351,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.getElementById('lightbox-next');
     const lightboxVideo = document.getElementById('lightbox-video');
 
+    // Zoom & Pan Logic
+    let isPanning = false;
+    let startX, startY;
+    let translateX = 0, translateY = 0;
+    let scale = 1;
+    const minScale = 1;
+    const maxScale = 5;
+
     let currentImages = [];
+    let currentCaptions = [];
     let currentIndex = 0;
+
+    const updateTransform = () => {
+        lightboxImg.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
+        lightboxImg.style.cursor = scale > 1 ? (isPanning ? 'grabbing' : 'grab') : 'zoom-in';
+    };
 
     const updateLightboxContent = () => {
         const currentSrc = currentImages[currentIndex];
+        const currentCap = currentCaptions[currentIndex] || "";
         const videoExtensions = ['.mp4', '.webm', '.mkv'];
         const isVideo = videoExtensions.some(ext => currentSrc.toLowerCase().endsWith(ext));
+
+        // Reset zoom & pan
+        scale = 1;
+        translateX = 0;
+        translateY = 0;
+        updateTransform();
+        lightboxImg.style.cursor = isVideo ? 'default' : 'zoom-in';
 
         if (isVideo) {
             lightboxImg.style.display = 'none';
@@ -324,13 +393,14 @@ document.addEventListener('DOMContentLoaded', () => {
             lightboxImg.style.display = 'block';
             lightboxImg.src = currentSrc;
         }
+        lightboxCaption.textContent = currentCap;
     };
 
-    const openLightbox = (images, index, title) => {
+    const openLightbox = (images, captions, index) => {
         currentImages = images;
+        currentCaptions = captions;
         currentIndex = index;
         updateLightboxContent();
-        lightboxCaption.textContent = title;
         lightbox.style.display = 'flex';
         document.body.style.overflow = 'hidden'; // Prevent scroll
     };
@@ -339,6 +409,8 @@ document.addEventListener('DOMContentLoaded', () => {
         lightbox.style.display = 'none';
         lightboxVideo.pause();
         lightboxVideo.src = '';
+        scale = 1;
+        lightboxImg.style.transform = 'none';
         document.body.style.overflow = 'auto';
     };
 
@@ -357,8 +429,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.gallery-item').forEach(item => {
         item.addEventListener('click', () => {
             const images = JSON.parse(item.getAttribute('data-images'));
-            const title = item.querySelector('span').textContent;
-            openLightbox(images, 0, title);
+            const captions = JSON.parse(item.getAttribute('data-captions') || '[]');
+            openLightbox(images, captions, 0);
         });
     });
 
@@ -367,7 +439,51 @@ document.addEventListener('DOMContentLoaded', () => {
     prevBtn.addEventListener('click', showPrev);
 
     lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) closeLightbox();
+        if (e.target === lightbox || e.target.classList.contains('lightbox-content')) closeLightbox();
+    });
+
+
+    lightbox.addEventListener('wheel', (e) => {
+        if (lightbox.style.display === 'flex' && lightboxImg.style.display === 'block') {
+            e.preventDefault();
+            const delta = e.deltaY;
+            const scrollSpeed = 0.001;
+
+            const prevScale = scale;
+            scale -= delta * scrollSpeed;
+            scale = Math.min(Math.max(minScale, scale), maxScale);
+
+            if (scale === 1) {
+                translateX = 0;
+                translateY = 0;
+            }
+
+            if (scale !== prevScale) {
+                updateTransform();
+            }
+        }
+    }, { passive: false });
+
+    lightboxImg.addEventListener('mousedown', (e) => {
+        if (scale > 1) {
+            isPanning = true;
+            startX = e.clientX - translateX * scale;
+            startY = e.clientY - translateY * scale;
+            updateTransform();
+        }
+    });
+
+    window.addEventListener('mousemove', (e) => {
+        if (isPanning && scale > 1) {
+            translateX = (e.clientX - startX) / scale;
+            translateY = (e.clientY - startY) / scale;
+            updateTransform();
+        }
+    });
+
+    window.addEventListener('mouseup', () => {
+        isPanning = false;
+        if (lightbox.style.display === 'flex') updateTransform();
     });
 
     // Keyboard Navigation
