@@ -971,8 +971,13 @@ footer {
         background: linear-gradient(to top, rgba(14, 11, 25, 1) 20%, rgba(14, 11, 25, 0.4) 60%, rgba(14, 11, 25, 0.2) 100%), url('img/Hero.jpg') center center / cover no-repeat;
     }
 
+    .side-line {
+        display: none;
+    }
+
     .hero-content {
         text-align: center;
+        padding-left: 0;
     }
 
     .hero p {
