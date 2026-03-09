@@ -135,9 +135,14 @@ document.addEventListener('DOMContentLoaded', () => {
             catCovers: "Portadas / Covers",
             catModels: "Modelos",
             catOptimization: "Optimización",
-            catShaders: "Shaders"
+            catShaders: "Shaders",
+            goBack: "Volver",
+            overview: "Descripción General",
+            contribution: "Mi Contribución",
+            visitItch: "Ver en itch.io"
         }
     };
+
 
     const enGalleryCats = {
         character: "Character Design",
@@ -263,10 +268,28 @@ document.addEventListener('DOMContentLoaded', () => {
         footerParas[1].textContent = t.footerAuthor;
 
         // Modals (Labels)
-        document.querySelectorAll('.modal-section h4')[0].textContent = t.modalPurpose;
-        document.querySelectorAll('.modal-section h4')[1].textContent = t.modalAddition;
-        document.querySelectorAll('.modal-section h4')[2].textContent = t.modalTools;
+        if (document.querySelector('.modal-section h4')) {
+            document.querySelectorAll('.modal-section h4')[0].textContent = t.modalPurpose;
+            document.querySelectorAll('.modal-section h4')[1].textContent = t.modalAddition;
+            if (document.querySelectorAll('.modal-section h4')[2]) {
+                document.querySelectorAll('.modal-section h4')[2].textContent = t.modalTools;
+            }
+        }
+
+        // Project Page specific
+        const goBack = document.querySelector('.go-back');
+        if (goBack) goBack.innerHTML = `<span class="arrow">&larr;</span> ${currentLang === 'en' ? 'Go Back' : t.goBack}`;
+
+        const overviewTitle = document.querySelector('[data-t="overview"]');
+        if (overviewTitle) overviewTitle.textContent = currentLang === 'en' ? 'Overview' : t.overview;
+
+        const contributionTitle = document.querySelector('[data-t="contribution"]');
+        if (contributionTitle) contributionTitle.textContent = currentLang === 'en' ? 'My Contribution' : t.contribution;
+
+        const itchBtn = document.querySelector('.project-detail-page .btn-primary');
+        if (itchBtn) itchBtn.innerHTML = `<img src="img/icons/show_light.png" alt="Show" class="btn-icon"> ${currentLang === 'en' ? 'View on itch.io' : t.visitItch}`;
     };
+
 
     langToggle.addEventListener('click', () => {
         currentLang = currentLang === 'en' ? 'es' : 'en';
@@ -493,10 +516,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.key === 'ArrowRight') showNext(e);
             if (e.key === 'ArrowLeft') showPrev(e);
         }
-        if (projectModal.style.display === 'flex') {
+        if (projectModal && projectModal.style.display === 'flex') {
             if (e.key === 'Escape') closeProjectModal();
         }
     });
+
 
     // Project Details Modal Logic
     const projectModal = document.getElementById('project-modal');
@@ -525,8 +549,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.project-card').forEach(card => {
         card.addEventListener('click', (e) => {
-            // Only trigger if not clicking a link inside (if any)
-            if (e.target.tagName !== 'A') {
+            // Only trigger modal if there's no link wrapper
+            if (!card.querySelector('.project-link-wrapper') && e.target.tagName !== 'A' && !e.target.closest('a')) {
                 const data = {
                     title: card.getAttribute('data-title'),
                     img: card.getAttribute('data-img'),
@@ -539,10 +563,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    projectModalClose.addEventListener('click', closeProjectModal);
-    projectModal.addEventListener('click', (e) => {
-        if (e.target === projectModal) closeProjectModal();
-    });
+    if (projectModalClose) projectModalClose.addEventListener('click', closeProjectModal);
+    if (projectModal) {
+        projectModal.addEventListener('click', (e) => {
+            if (e.target === projectModal) closeProjectModal();
+        });
+    }
+
 
     // Form Submission Handling
     const contactForm = document.querySelector('.contact-form');
