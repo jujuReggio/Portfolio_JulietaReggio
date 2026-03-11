@@ -211,12 +211,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const t = translations[currentLang];
 
         // Navigation
-        const navAbout = document.querySelector('a[href="#about"]');
+        const navAbout = document.querySelector('a[href="#about"], a[href="index.html#about"]');
         if (navAbout) navAbout.textContent = t.navAbout;
-        document.querySelectorAll('a[href="#skills"]').forEach(el => el.textContent = t.navSkills);
-        document.querySelectorAll('a[href="#projects"]').forEach(el => el.textContent = t.navProjects);
-        document.querySelectorAll('a[href="#gallery"]').forEach(el => el.textContent = t.navGallery);
-        document.querySelectorAll('a[href="#contact"]').forEach(el => el.textContent = t.navContact);
+        document.querySelectorAll('a[href="#skills"], a[href="index.html#skills"]').forEach(el => el.textContent = t.navSkills);
+        document.querySelectorAll('a[href="#projects"], a[href="index.html#projects"]').forEach(el => el.textContent = t.navProjects);
+        document.querySelectorAll('a[href="#gallery"], a[href="index.html#gallery"]').forEach(el => el.textContent = t.navGallery);
+        document.querySelectorAll('a[href="#contact"], a[href="index.html#contact"]').forEach(el => el.textContent = t.navContact);
 
         // Toggle Text
         langToggle.innerHTML = `<img src="img/icons/language_light.png" alt="Language" class="nav-icon"> ${currentLang.toUpperCase()}`;
@@ -495,11 +495,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Smooth Scroll for Logo
     if (headerLogo) {
         headerLogo.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            const href = headerLogo.getAttribute('href');
+            if (href === '#hero' || href === '#') {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
         });
     }
 
@@ -519,7 +522,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Reveal Sections on Scroll
     const observerOptions = {
-        threshold: 0.1
+        threshold: 0.05, // Reduced from 0.1 to handle large sections on mobile
+        rootMargin: '0px 0px -50px 0px'
     };
 
     const revealObserver = new IntersectionObserver((entries) => {
@@ -530,9 +534,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    document.querySelectorAll('section').forEach(section => {
-        section.classList.add('reveal');
-        revealObserver.observe(section);
+    // For project detailed pages, we reveal rows instead of the whole section
+    // to avoid the entire page being hidden if the section is too tall for the threshold
+    const revealTargets = document.querySelectorAll('section:not(.project-hero), .intercalated-row, .project-top-row');
+
+    revealTargets.forEach(el => {
+        el.classList.add('reveal');
+        revealObserver.observe(el);
     });
 
     // Lightbox Logic
