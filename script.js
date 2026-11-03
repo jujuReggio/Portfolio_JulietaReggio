@@ -20,9 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
             contactBtn: "Contact",
             downloadCV: "Download CV",
             aboutTitle: "About Me",
-            aboutP1: "I'm a <strong>Technician Video Game Developer</strong> in my final year of studies towards getting my Bachelor's degree at <strong>UADE</strong> (Universidad de la Empresa Argentina).",
-            aboutP2: "I specialize in 2D art, with experience in 3D modeling, texturing, and technical art workflows. With proficiency in Unreal Engine and Unity, I develop gameplay systems using both Blueprints and code (C++ and C#).",
-            aboutP3: "My multidisciplinary background gives me a unique perspective, allowing me to bridge the gap between art, programming, and design teams. I have a strong inclination toward product management and cross-disciplinary coordination.",
+            aboutP1: "I'm a <strong>Technician Video Game Developer</strong> in my final year of studies at <strong>UADE</strong> (Universidad de la Empresa Argentina), where I'm working towards my Bachelor's degree.",
+            aboutP2: "My main focus is <strong>2D art</strong>, with experience in texturing, UI/UX and technical art. I also work with <strong>Unity and Unreal Engine</strong>, developing gameplay systems using C# and C++, as well as Blueprints in Unreal Engine.",
+            aboutP3: "I'm interested in the intersection of <strong>art, programming, and design</strong>, and I enjoy exploring how these disciplines come together during game development. I'm also interested in product management and team coordination, particularly in collaborative, multidisciplinary projects.",
             academicTitle: "Academic Background",
             academicUade: "2023 - Present (Currently in 4th year)",
             academicUadeDeg: "Technician in Video Game Development",
@@ -49,9 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
             contactSend: "Send Message",
             footerAuthor: "Author: Julieta Reggio",
             footerRights: "&copy; 2026 Game Developer & Technical Artist. All rights reserved.",
-            modalPurpose: "Short Description",
-            modalAddition: "My Addition",
-            modalTools: "Tools Used",
             knkVisionTitle: "Artistic Vision & Core Objective",
             knkVisionP1: "I was responsible for the entire artistic pipeline, from initial concept art and visual design to the production of all in-game assets and sprite animations. Our goal was to create an engaging experience featuring a charming art style and a recognizable, memorable protagonist.",
             knkVisionP2: "The game is set in a village in ruins, and the art aims to implement contrast and distinction while remaining visually cohesive. Across different biomes and states of decay, every element feels like part of the same world. I designed the environment specifically to inspire a \"restoration drive\" in the player—creating a world they genuinely want to see beautiful, repaired, and full of life once again.",
@@ -79,18 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
             knkDesc: "Resource management and restoration with a combat component and three different biomes to explore. Gather resources, face enemies, and defeat bosses that block progress.",
             projects: {
                 knk: {
-                    purpose: "Resource management and restoration with a combat component and three different biomes to explore. Gather resources, face enemies, and defeat bosses that block progress.",
-                    desc: "Resource management and restoration with a combat component and three different biomes to explore. Gather resources, face enemies, and defeat bosses that block progress.",
-                    addition: "I was responsible for the entire art pipeline, from concept art and visual design to producing all in-game assets and sprite animations. I also created visual effects using Unity’s particle system and contributed to programming features such as the restoration and inventory systems.",
-                    tools: "Unity, C#, Photoshop, Medibang Paint Pro, Particle Systems"
-                },
-                goblin: {
-                    purpose: "Create a fast-paced FPS dungeon crawler with a focus on smart AI behavior and replayability through procedural generation.",
-                    desc: "Medieval fantasy first-person shooter developed in Unreal Engine 5 with custom combat systems, AI behavior, and procedural level generation.",
-                    addition: "I developed the custom combat systems and the AI logic for variety of enemy types. I also designed the modular environment kits used for the procedural level generation.",
-                    tools: "Unreal Engine 5, Blueprints, Blender, Niagara System, Custom Shaders"
-                },
-                btnView: "View Project"
+                    desc: "Resource management and restoration with a combat component and three different biomes to explore. Gather resources, face enemies, and defeat bosses that block progress."
+                }
             }
         },
         es: {
@@ -106,9 +93,9 @@ document.addEventListener('DOMContentLoaded', () => {
             contactBtn: "Contacto",
             downloadCV: "Descargar CV",
             aboutTitle: "Sobre Mí",
-            aboutP1: "Soy <strong>Técnica en Desarrollo de Videojuegos</strong> en mi último año de estudios para obtener mi licenciatura en <strong>UADE</strong> (Universidad de la Empresa Argentina).",
-            aboutP2: "Me especializo en arte 2D, con experiencia en modelado 3D, texturizado y flujos de trabajo de arte técnico. Con dominio de Unreal Engine y Unity, desarrollo sistemas de videojuegos utilizando tanto Blueprints como código (C++ y C#).",
-            aboutP3: "Mi formación multidisciplinaria me brinda una perspectiva única, permitiéndome cerrar la brecha entre los equipos de arte, programación y diseño. Tengo una fuerte inclinación hacia la gestión de productos y la coordinación interdisciplinaria.",
+            aboutP1: "Soy <strong>Técnica en Desarrollo de Videojuegos</strong> y estoy en el último año de mis estudios en <strong>UADE</strong> (Universidad de la Empresa Argentina), donde estoy cursando la licenciatura.",
+            aboutP2: "Mi principal enfoque es el <strong>arte 2D</strong>, con experiencia en texturizado, UI/UX y arte técnico. También trabajo con <strong>Unity y Unreal Engine</strong>, desarrollando sistemas de juego con C# y C++, así como con Blueprints en Unreal Engine.",
+            aboutP3: "Me interesa la intersección entre el <strong>arte, la programación y el diseño</strong>, y disfruto explorar cómo se combinan estas disciplinas durante el desarrollo de videojuegos. También me interesan la gestión de productos y la coordinación de equipos, especialmente en proyectos colaborativos y multidisciplinarios.",
             academicTitle: "Formación Académica",
             academicUade: "2023 - Presente (Actualmente en 4º año)",
             academicUadeDeg: "Tecnicatura en Desarrollo de Videojuegos",
@@ -135,9 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
             contactSend: "Enviar Mensaje",
             footerAuthor: "Autor: Julieta Reggio",
             footerRights: "&copy; 2026 Desarrolladora de Videojuegos & Artista Técnica. Todos los derechos reservados.",
-            modalPurpose: "Breve Descripción",
-            modalAddition: "Mi Contribución",
-            modalTools: "Herramientas",
             knkVisionTitle: "Visión Artística y Objetivo Central",
             knkVisionP1: "Fui responsable de todo el flujo artístico, desde el arte conceptual inicial y el diseño visual hasta la producción de todos los assets del juego y las animaciones de sprites. Nuestro objetivo era crear una experiencia atractiva con un estilo artístico encantador y un protagonista reconocible y memorable.",
             knkVisionP2: "El juego se desarrolla en una aldea en ruinas, y el arte busca implementar contraste y distinción manteniéndose visualmente cohesivo. A través de diferentes biomas y estados de decadencia, cada elemento se siente parte del mismo mundo. Diseñé el entorno específicamente para inspirar un \"impulso de restauración\" en el jugador, creando un mundo que realmente quieran ver hermoso, reparado y lleno de vida una vez más.",
@@ -165,23 +149,14 @@ document.addEventListener('DOMContentLoaded', () => {
             knkDesc: "Gestión de recursos y restauración con un componente de combate y tres biomas diferentes para explorar. Reúne recursos, enfrenta enemigos y derrota jefes que bloquean el progreso.",
             projects: {
                 knk: {
-                    purpose: "Gestión de recursos y restauración con un componente de combate y tres biomas diferentes para explorar. Reúne recursos, enfrenta enemigos y derrota jefes que bloquean el progreso.",
-                    desc: "Gestión de recursos y restauración con un componente de combate y tres biomas diferentes para explorar. Reúne recursos, enfrenta enemigos y derrota jefes que bloquean el progreso.",
-                    addition: "Fui responsable de todo el flujo de trabajo artístico, desde el arte conceptual y el diseño visual hasta la producción de todos los assets del juego y las animaciones de sprites. También creé efectos visuales utilizando el sistema de partículas de Unity y contribuí a la programación de características como los sistemas de restauración e inventario.",
-                    tools: "Unity, C#, Photoshop, Medibang Paint Pro, Particle Systems"
-                },
-                goblin: {
-                    purpose: "Crear un dungeon crawler FPS de ritmo rápido centrado en un comportamiento de IA inteligente y rejugabilidad a través de la generación procedimental.",
-                    desc: "Shooter en primera persona de fantasía medieval desarrollado en Unreal Engine 5 con sistemas de combate personalizados, comportamiento de IA y generación de niveles procedimental.",
-                    addition: "Desarrollé los sistemas de combate personalizados y la lógica de IA para una variedad de tipos de enemigos. También diseñé los kits de entorno modulares utilizados para la generación de niveles procedimental.",
-                    tools: "Unreal Engine 5, Blueprints, Blender, Niagara System, Custom Shaders"
-                },
-                btnView: "Ver Proyecto"
+                    desc: "Gestión de recursos y restauración con un componente de combate y tres biomas diferentes para explorar. Reúne recursos, enfrenta enemigos y derrota jefes que bloquean el progreso."
+                }
             },
             catCharacter: "Diseño de Personajes",
             catCommissions: "Comisiones",
             catAnimation: "Sprites de Animación",
             catProps: "Props / Assets",
+            catInterfaces: "Interfaces",
             catCovers: "Portadas / Covers",
             catModels: "Modelos",
             catOptimization: "Optimización",
@@ -199,6 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
         comissions: "Comissions",
         animation: "Animation Sprites",
         props: "Prop / Assets",
+        interfaces: "Interfaces",
         covers: "SplashScreens / Covers",
         models: "Models",
         optimization: "Optimization",
@@ -283,8 +259,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Skills
-        const skillsH2 = document.querySelector('#skills h2');
-        if (skillsH2) skillsH2.textContent = t.skillsTitle;
+        const skillsHeading = document.querySelector('#skills h3');
+        if (skillsHeading) skillsHeading.textContent = t.skillsTitle;
         const skillCards = document.querySelectorAll('.skill-card h3');
         if (skillCards.length >= 4) {
             skillCards[0].textContent = t.skill2d;
@@ -304,16 +280,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const id = card.getAttribute('data-id');
             if (t.projects[id]) {
                 const data = t.projects[id];
-                card.setAttribute('data-purpose', data.purpose);
-                card.setAttribute('data-addition', data.addition);
-                card.setAttribute('data-tools', data.tools);
                 const infoP = card.querySelector('.project-info p');
                 if (infoP) infoP.textContent = data.desc;
-
-                const btn = card.querySelector('.btn-project');
-                if (btn && id === 'goblin') { // Only translate generic buttons, itch.io stays as brand
-                    btn.innerHTML = `<img src="img/icons/show_light.png" alt="Show" class="btn-icon"> ${t.projects.btnView}`;
-                }
             }
         });
 
@@ -326,6 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (cat === 'comissions') span.textContent = currentLang === 'en' ? enGalleryCats.comissions : t.catCommissions;
                 if (cat === 'animation') span.textContent = currentLang === 'en' ? enGalleryCats.animation : t.catAnimation;
                 if (cat === 'props') span.textContent = currentLang === 'en' ? enGalleryCats.props : t.catProps;
+                if (cat === 'interfaces') span.textContent = currentLang === 'en' ? enGalleryCats.interfaces : t.catInterfaces;
                 if (cat === 'covers') span.textContent = currentLang === 'en' ? enGalleryCats.covers : t.catCovers;
                 if (cat === 'models') span.textContent = currentLang === 'en' ? enGalleryCats.models : t.catModels;
                 if (cat === 'optimization') span.textContent = currentLang === 'en' ? enGalleryCats.optimization : t.catOptimization;
@@ -358,16 +327,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (footerParas.length >= 2) {
             footerParas[0].innerHTML = t.footerRights;
             footerParas[1].textContent = t.footerAuthor;
-        }
-
-        // Modals (Labels)
-        const modalH4s = document.querySelectorAll('.modal-section h4');
-        if (modalH4s.length >= 2) {
-            modalH4s[0].textContent = t.modalPurpose;
-            modalH4s[1].textContent = t.modalAddition;
-            if (modalH4s[2]) {
-                modalH4s[2].textContent = t.modalTools;
-            }
         }
 
         // Project Page specific
@@ -709,60 +668,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.key === 'ArrowRight') showNext(e);
             if (e.key === 'ArrowLeft') showPrev(e);
         }
-        if (projectModal && projectModal.style.display === 'flex') {
-            if (e.key === 'Escape') closeProjectModal();
-        }
     });
-
-
-    // Project Details Modal Logic
-    const projectModal = document.getElementById('project-modal');
-    const modalImg = document.getElementById('modal-img');
-    const modalTitle = document.getElementById('modal-title');
-    const modalPurpose = document.getElementById('modal-purpose');
-    const modalAddition = document.getElementById('modal-addition');
-    const modalTools = document.getElementById('modal-tools');
-    const projectModalClose = document.getElementById('modal-close');
-
-    const openProjectModal = (data) => {
-        if (modalImg) modalImg.src = data.img;
-        if (modalTitle) modalTitle.textContent = data.title;
-        if (modalPurpose) modalPurpose.textContent = data.purpose;
-        if (modalAddition) modalAddition.textContent = data.addition;
-        if (modalTools) modalTools.textContent = data.tools;
-
-        if (projectModal) projectModal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-    };
-
-    const closeProjectModal = () => {
-        if (projectModal) projectModal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    };
-
-    document.querySelectorAll('.project-card').forEach(card => {
-        card.addEventListener('click', (e) => {
-            // Only trigger modal if there's no link wrapper
-            if (!card.querySelector('.project-link-wrapper') && e.target.tagName !== 'A' && !e.target.closest('a')) {
-                const data = {
-                    title: card.getAttribute('data-title'),
-                    img: card.getAttribute('data-img'),
-                    purpose: card.getAttribute('data-purpose'),
-                    addition: card.getAttribute('data-addition'),
-                    tools: card.getAttribute('data-tools')
-                };
-                openProjectModal(data);
-            }
-        });
-    });
-
-    if (projectModalClose) projectModalClose.addEventListener('click', closeProjectModal);
-    if (projectModal) {
-        projectModal.addEventListener('click', (e) => {
-            if (e.target === projectModal) closeProjectModal();
-        });
-    }
-
 
     // Form Submission Handling
     const contactForm = document.querySelector('.contact-form');

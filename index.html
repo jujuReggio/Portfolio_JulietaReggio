@@ -18,9 +18,8 @@
         <nav>
             <ul class="nav-links" id="nav-menu">
                 <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
                 <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li class="lang-toggle">
                     <img src="img/icons/language_light.png" alt="Language" class="nav-icon">
@@ -72,18 +71,13 @@
             <div class="about-container">
                 <div class="about-main">
                     <div class="about-image">
-                        <img src="img/profilePicture.jpeg" alt="Julieta Reggio">
+                        <img src="img/profilePicture.png" alt="Julieta Reggio">
                     </div>
                     <div class="about-text">
-                        <p>I'm a <strong>Technician Video Game Developer</strong> in my final year of studies towards
-                            getting my Bachelor's degree at <strong>UADE</strong> (Universidad de la Empresa Argentina).
+                        <p>I'm a <strong>Technician Video Game Developer</strong> in my final year of studies at <strong>UADE</strong> (Universidad de la Empresa Argentina), where I'm working towards my Bachelor's degree. 
                         </p>
-                        <p>I specialize in 2D art, with experience in 3D modeling, texturing, and technical art
-                            workflows. With proficiency in Unreal Engine and Unity, I develop gameplay systems using
-                            both Blueprints and code (C++ and C#).</p>
-                        <p>My multidisciplinary background gives me a unique perspective, allowing me to bridge the gap
-                            between art, programming, and design teams. I have a strong inclination toward product
-                            management and cross-disciplinary coordination.</p>
+                        <p>My main focus is <strong>2D art</strong>, with experience in texturing, UI/UX and technical art. I also work with <strong>Unity and Unreal Engine</strong>, developing gameplay systems using C# and C++, as well as Blueprints in Unreal Engine.</p>
+                        <p>I'm interested in the intersection of <strong>art, programming, and design</strong>, and I enjoy exploring how these disciplines come together during game development. I'm also interested in product management and team coordination, particularly in collaborative, multidisciplinary projects.</p>
                     </div>
                 </div>
 
@@ -120,48 +114,112 @@
                     </div>
                 </div>
             </div>
+
+            <div id="skills" class="skills-section detail-group">
+                <h3>Skills & Tools</h3>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>2D Art & Design</h3>
+                        <ul>
+                            <li>Photoshop</li>
+                            <li>Illustrator</li>
+                            <li>Concept Art</li>
+                            <li>Animation Sprites</li>
+                            <li>UI/UX Design</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h3>3D Production</h3>
+                        <ul>
+                            <li>Blender</li>
+                            <li>2.5 Textures</li>
+                            <li>Substance 3D Painter</li>
+                            <li>Optimization</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Code & Engines</h3>
+                        <ul>
+                            <li>Unity</li>
+                            <li>Unreal Engine</li>
+                            <li>C# / C++</li>
+                            <li>Blueprints</li>
+                            <li>Shader Graphs</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Web Development</h3>
+                        <ul>
+                            <li>HTML / CSS</li>
+                            <li>JavaScript</li>
+                            <li>Responsive Design</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills">
-            <h2>Skills & Tools</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>2D Art & Design</h3>
-                    <ul>
-                        <li>Photoshop</li>
-                        <li>Illustrator</li>
-                        <li>Concept Art</li>
-                        <li>Animation Sprites</li>
-                        <li>UI/UX Design</li>
-                    </ul>
+        <!-- Art Portfolio Section -->
+        <section id="gallery">
+            <h2>Art Portfolio</h2>
+
+            <div class="gallery-category">
+                <h3 class="category-title">2D</h3>
+                <div class="gallery-scroll">
+                    <div class="gallery-item" data-category="props"
+                        data-images='["img/art/2d/PropAssets/villageAssets.png", "img/art/2d/PropAssets/biomsAssets.png", "img/art/2d/PropAssets/astroAssets.png"]'
+                        data-captions='["Village Environment Kit", "Biome Asset Pack", "Astro All Stars Asset Pack"]'>
+                        <img src="img/art/2d/PropAssets/villageAssets.png" alt="Prop / Assets">
+                        <div class="gallery-overlay"><span>Prop / Assets</span></div>
+                    </div>
+                    <div class="gallery-item" data-category="animation"
+                        data-images='["img/art/2d/AnimationSprite/knkAnimations.gif", "img/art/2d/AnimationSprite/knkAnimations2.gif", "img/art/2d/AnimationSprite/WalkingCycle.gif"]'
+                        data-captions='["Katana No Neko Animation Sprites", "Katana No Neko NPC Animations", "Walking Cycle on DragonBones"]'>
+                        <img src="img/art/2d/AnimationSprite/knkAnimations.gif" alt="Animations">
+                        <div class="gallery-overlay"><span>Animations</span></div>
+                    </div>
+                    <div class="gallery-item" data-category="interfaces"
+                        data-images='["img/art/2d/Interfaces/PF_Controls.png", "img/art/2d/Interfaces/PF_Volume.png", "img/art/2d/Interfaces/PF_Pause.png"]'
+                        data-captions='["Options Menu", "Options Volume", "Pause Menu"]'>
+                        <img src="img/art/2d/Interfaces/PF_Pause.png" alt="Interfaces">
+                        <div class="gallery-overlay"><span>Interfaces</span></div>
+                    </div>
+                    <div class="gallery-item" data-category="character"
+                        data-images='["img/art/2d/CharacterDesign/ValkyrieConcept.png", "img/art/2d/CharacterDesign/ValkyrieTurnaround.png", "img/art/2d/CharacterDesign/conceptCats.jpeg", "img/art/2d/CharacterDesign/oc jewler.png", "img/art/2d/CharacterDesign/turnaround.png", "img/art/2d/CharacterDesign/turnaround0.png"]'
+                        data-captions='["Valkyrie Character Concept Art", "Valkyrie Character Turnaround", "Cat Character Concepts", "Original Character: The Jeweler", "Original Character Turnaround", "Supplementary Character Views"]'>
+                        <img src="img/art/2d/CharacterDesign/ValkyrieConcept.png" alt="Character Design">
+                        <div class="gallery-overlay"><span>Character Design</span></div>
+                    </div>
+                    <div class="gallery-item" data-category="Rendering"
+                        data-images='["img/art/2d/Rendering/Eir_Rendering.jpg","img/art/2d/Rendering/girl.png", "img/art/2d/Rendering/choso.png", "img/art/2d/Rendering/kain.png", "img/art/2d/Rendering/rafa.png", "img/art/2d/Rendering/robin.jpeg"]'
+                        data-captions='["Pantheon Fall: Eir Splash Art", "Character Full Body", "Fan Art Commission: Choso (Jujutsu Kaisen)", "Fan Art: Kayn (League Of Legends)", "Portrait Commission", "Fan Art: Robin (One Piece)"]'>
+                        <img src="img/art/2d/Rendering/Eir_Rendering.jpg" alt="Rendering">
+                        <div class="gallery-overlay"><span>Rendering</span></div>
+                    </div>
                 </div>
-                <div class="skill-card">
-                    <h3>3D Production</h3>
-                    <ul>
-                        <li>Blender</li>
-                        <li>2.5 Textures</li>
-                        <li>Substance 3D Painter</li>
-                        <li>Optimization</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3>Code & Engines</h3>
-                    <ul>
-                        <li>Unity</li>
-                        <li>Unreal Engine</li>
-                        <li>C# / C++</li>
-                        <li>Blueprints</li>
-                        <li>Shader Graphs</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3>Web Development</h3>
-                    <ul>
-                        <li>HTML / CSS</li>
-                        <li>JavaScript</li>
-                        <li>Responsive Design</li>
-                    </ul>
+            </div>
+
+            <div class="gallery-category">
+                <h3 class="category-title">3D</h3>
+                <div class="gallery-scroll">
+                    <div class="gallery-item" data-category="models"
+                        data-images='["img/art/3d/Models/Character_01.png", "img/art/3d/Models/Jaws.png", "img/art/3d/Models/Helicopter.png", "img/art/3d/Models/heliVideo.mp4"]'
+                        data-captions='["Texture Character Model", "Anatomical Asset Study", "Low Poly Helicopter Model", "Helicopter Turnaround"]'>
+                        <img src="img/art/3d/Models/Jaws.png" alt="Models">
+                        <div class="gallery-overlay"><span>Models</span></div>
+                    </div>
+                    <div class="gallery-item" data-category="optimization"
+                        data-images='["img/art/3d/Optimization/Retopo.png"]'
+                        data-captions='["Character Retopology"]'>
+                        <img src="img/art/3d/Optimization/Retopo0.png" alt="Optimization">
+                        <div class="gallery-overlay"><span>Optimization</span></div>
+                    </div>
+                    <div class="gallery-item" data-category="Textures"
+                        data-images='["img/art/3d/Textures/TextureClothesValk.png", "img/art/3d/Textures/TextureValk.png", "img/art/3d/Textures/KhonsuText.png"]'
+                        data-captions='["Female Character Clothes Texture", "Character Texture", "God Character Texture"]'>
+                        <img src="img/art/3d/Textures/TextureClothesValk.png" alt="Textures">
+                        <div class="gallery-overlay"><span>Textures</span></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -170,10 +228,7 @@
         <section id="projects">
             <h2>Projects and Prototypes</h2>
             <div class="projects-grid">
-                <div class="project-card" data-id="knk" data-title="KATANA NO NEKO" data-img="img/prototypes/knk.png"
-                    data-purpose="Resource management and restoration with a combat component and three different biomes to explore. Gather resources, face enemies, and defeat bosses that block progress."
-                    data-addition="I was responsible for the entire art pipeline, from concept art and visual design to producing all in-game assets and sprite animations. I also created visual effects using Unity’s particle system and contributed to programming features such as the restoration and inventory systems."
-                    data-tools="Unity, C#, Photoshop, Medibang Paint Pro, Particle Systems">
+                <div class="project-card" data-id="knk">
                     <a href="katana-no-neko.html" class="project-link-wrapper">
                         <div class="project-img">
                             <img src="img/prototypes/knk.png" alt="Katana No Neko">
@@ -190,84 +245,6 @@
                     </a>
                 </div>
 
-                <div class="project-card" data-id="goblin" data-title="GOBLIN LAIR PROTOTYPE"
-                    data-img="img/prototypes/goblinLair.png"
-                    data-purpose="Create a fast-paced FPS dungeon crawler with a focus on smart AI behavior and replayability through procedural generation."
-                    data-addition="I developed the custom combat systems and the AI logic for variety of enemy types. I also designed the modular environment kits used for the procedural level generation."
-                    data-tools="Unreal Engine 5, Blueprints, Blender, Niagara System, Custom Shaders">
-                    <div class="project-img">
-                        <img src="img/prototypes/goblinLair.png" alt="Goblin Lair Prototype">
-                    </div>
-                    <div class="project-info">
-                        <h3>GOBLIN LAIR PROTOTYPE</h3>
-                        <p>Medieval fantasy first-person shooter developed in Unreal Engine 5 with custom combat
-                            systems, AI behavior, and procedural level generation.</p>
-                        <button class="btn-project">
-                            <img src="img/icons/show_light.png" alt="Show" class="btn-icon">
-                            View Project
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Art Portfolio Section -->
-        <section id="gallery">
-            <h2>Art Portfolio</h2>
-
-            <div class="gallery-category">
-                <h3 class="category-title">2D</h3>
-                <div class="gallery-scroll">
-                    <div class="gallery-item" data-category="character"
-                        data-images='["img/art/2d/CharacterDesign/ValkyrieConcept.png", "img/art/2d/CharacterDesign/ValkyrieTurnaround.png", "img/art/2d/CharacterDesign/conceptCats.jpeg", "img/art/2d/CharacterDesign/oc jewler.png", "img/art/2d/CharacterDesign/turnaround.png", "img/art/2d/CharacterDesign/turnaround0.png"]'
-                        data-captions='["Valkyrie Character Concept Art", "Valkyrie Character Turnaround", "Cat Character Concepts", "Original Character: The Jeweler", "Original Character Turnaround", "Supplementary Character Views"]'>
-                        <img src="img/art/2d/CharacterDesign/ValkyrieConcept.png" alt="Character Design">
-                        <div class="gallery-overlay"><span>Character Design</span></div>
-                    </div>
-                    <div class="gallery-item" data-category="Rendering"
-                        data-images='["img/art/2d/Rendering/Eir_Rendering.jpg","img/art/2d/Rendering/girl.png", "img/art/2d/Rendering/choso.png", "img/art/2d/Rendering/kain.png", "img/art/2d/Rendering/rafa.png", "img/art/2d/Rendering/robin.jpeg"]'
-                        data-captions='["Pantheon Fall: Eir Splash Art", "Character Full Body", "Fan Art Commission: Choso (Jujutsu Kaisen)", "Fan Art: Kayn (League Of Legends)", "Portrait Commission", "Fan Art: Robin (One Piece)"]'>
-                        <img src="img/art/2d/Rendering/Eir_Rendering.jpg" alt="Rendering">
-                        <div class="gallery-overlay"><span>Rendering</span></div>
-                    </div>
-                    <div class="gallery-item" data-category="animation"
-                        data-images='["img/art/2d/AnimationSprite/knkAnimations.gif", "img/art/2d/AnimationSprite/knkAnimations2.gif", "img/art/2d/AnimationSprite/WalkingCycle.gif"]'
-                        data-captions='["Katana No Neko Animation Sprites", "Katana No Neko NPC Animations", "Walking Cycle on DragonBones"]'>
-                        <img src="img/art/2d/AnimationSprite/cover.png" alt="Animations">
-                        <div class="gallery-overlay"><span>Animations</span></div>
-                    </div>
-                    <div class="gallery-item" data-category="props"
-                        data-images='["img/art/2d/PropAssets/villageAssets.png", "img/art/2d/PropAssets/biomsAssets.png", "img/art/2d/PropAssets/astroAssets.png"]'
-                        data-captions='["Village Environment Kit", "Biome Asset Pack", "Astro All Stars Asset Pack"]'>
-                        <img src="img/art/2d/PropAssets/villageAssets.png" alt="Prop / Assets">
-                        <div class="gallery-overlay"><span>Prop / Assets</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="gallery-category">
-                <h3 class="category-title">3D</h3>
-                <div class="gallery-scroll">
-                    <div class="gallery-item" data-category="models"
-                        data-images='["img/art/3d/Models/Character0.png", "img/art/3d/Models/Character1.png", "img/art/3d/Models/Character2.png", "img/art/3d/Models/Character4.png", "img/art/3d/Models/Character5.png", "img/art/3d/Models/Helicopter0.png", "img/art/3d/Models/HelicopterViews.png", "img/art/3d/Models/heliVideo.mp4", "img/art/3d/Models/Jaw0.png", "img/art/3d/Models/Jaw1.png"]'
-                        data-captions='["Texture Character Model", "Character High Poly", "Full Body Model", "Sculpted Character Model", "Sculpted Character Side Profile", "Low Poly Helicopter Model", "Helicopter Model Views", "Helicopter Turnaround", "Anatomical Asset Study (Front)", "Anatomical Asset Study (Side)"]'>
-                        <img src="img/art/3d/Models/Character0.png" alt="Models">
-                        <div class="gallery-overlay"><span>Models</span></div>
-                    </div>
-                    <div class="gallery-item" data-category="optimization"
-                        data-images='["img/art/3d/Optimization/Retopo0.png", "img/art/3d/Optimization/Retopo1.png", "img/art/3d/Optimization/Retopo2.png"]'
-                        data-captions='["Character Face Retopology", "Front View of Retopology", "Back View of Retopology"]'>
-                        <img src="img/art/3d/Optimization/Retopo0.png" alt="Optimization">
-                        <div class="gallery-overlay"><span>Optimization</span></div>
-                    </div>
-                    <div class="gallery-item" data-category="shaders"
-                        data-images='["img/art/3d/Shaders/Ue5_NS_Beam.mp4", "img/art/3d/Shaders/UIShader.mp4", "img/art/3d/Shaders/WaterfallScene.mp4", "img/art/3d/Shaders/BoatScene.mp4"]'
-                        data-captions='["Beam with custom particle sprites", "UI Metalic Button Shader", "Dynamic Waterfall Shader", "Stylized Water Interaction"]'>
-                        <img src="img/art/3d/Shaders/coverShaders.png" alt="Shaders">
-                        <div class="gallery-overlay"><span>Shaders</span></div>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -342,33 +319,6 @@
             <div id="lightbox-caption"></div>
         </div>
         <button class="lightbox-next" id="lightbox-next">&#10095;</button>
-    </div>
-
-    <!-- Project Detailed Modal -->
-    <div class="project-modal" id="project-modal">
-        <div class="modal-container">
-            <span class="modal-close" id="modal-close">&times;</span>
-            <div class="modal-content">
-                <div class="modal-left">
-                    <img src="" id="modal-img" alt="Project Image">
-                </div>
-                <div class="modal-right">
-                    <h3 id="modal-title">Project Title</h3>
-                    <div class="modal-section">
-                        <h4>Short Description</h4>
-                        <p id="modal-purpose">Project purpose goes here.</p>
-                    </div>
-                    <div class="modal-section">
-                        <h4>My Addition</h4>
-                        <p id="modal-addition">My specific contribution goes here.</p>
-                    </div>
-                    <div class="modal-section">
-                        <h4>Tools Used</h4>
-                        <p id="modal-tools" class="tools-list">Tools list goes here.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <script src="script.js"></script>
